@@ -1,8 +1,9 @@
 import { API_URL, HEADERS } from '@/constants/api'
+import { type PropertyDocumentExtractedKeywords } from '@/types/property'
 
 interface GetPdfContentResponse {
   pdfContent: string
-  documentData: string
+  documentData: Partial<PropertyDocumentExtractedKeywords>
 }
 
 export const DocumentsService = {

@@ -1,9 +1,6 @@
 import { Router } from 'express'
 import { type UploadedFile } from 'express-fileupload'
-import {
-  extractValuesFromLeaseAbstract,
-  getPdfFileResult,
-} from '../utils/doc-scanner'
+import { getPdfFileResult } from '../lib/doc-scanner'
 
 export const docsApi = Router()
 const docsRoutePath = '/api/docs'
@@ -14,13 +11,13 @@ docsApi.post(`${docsRoutePath}/get-pdf-content`, async (req, res) => {
   }
 
   try {
-    const pdfContent = await getPdfFileResult(
+    const { pdfContent, keywordsMap } = await getPdfFileResult(
       req.files!.pdfFile as UploadedFile
     )
 
     return res.json({
       pdfContent: pdfContent.text,
-      documentData: extractValuesFromLeaseAbstract(pdfContent.text),
+      documentData: keywordsMap,
     })
   } catch (error) {
     console.log(error)

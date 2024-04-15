@@ -1,28 +1,3 @@
-// data extracted from property document
-export type PropertyDocument = {
-  tenants?: string[]
-  property?: string
-  unitAddress?: string
-  email?: string
-  alternateEmail?: string
-  residentAddress?: string
-  residentAddress2?: string
-  cellPhone?: string
-  alternatePhone?: string
-  unit?: string
-  lateFeesBaseAmount?: string
-  lateFeesGracePeriod?: string
-  previousRent?: string
-  secDep?: string
-  unitType?: string
-  unitSize?: string
-  unitSf?: string
-  rentAmount?: number
-  leaseTerm?: string
-  leaseFrom?: string
-  leaseSignDate?: string
-}
-
 export type PropertyData = {
   tenants: string[]
   property: string
@@ -49,4 +24,16 @@ export type Concession = {
   type: string // Type of concession (e.g., "price reduction", "closing cost coverage", etc.)
   value?: number // Value of the concession (optional, as not all concessions have a numerical value)
   description?: string // Optional description or additional details about the concession
+}
+
+export type PropertyDocumentExtractedKeywords = {
+  tenants: string[]
+  property: string[]
+  unitAddress: string[]
+  rentAmount: string[]
+  leaseStartDate: string[]
+  leaseEndDate?: string[]
+  securityDepositAmount: string[]
+  concession?: string[]
+  unit: string[]
 }
