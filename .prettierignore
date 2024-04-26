@@ -1,0 +1,32 @@
+# dependencies
+red-client/node_modules
+red-client/.pnp
+red-client/.pnp.js
+red-client/.yarn/install-state.gz
+
+# next.js
+red-client/.next/
+red-client/out/
+
+# production
+red-client/build
+red-server/build
+
+# misc
+*.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env*.local
+
+# vercel
+red-client/.vercel
+
+# typescript
+*.tsbuildinfo
+red-client/next-env.d.ts
